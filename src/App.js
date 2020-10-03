@@ -3,7 +3,6 @@ import Cart from './Cart';
 import './App.css';
 import FeatureForm from './FeatureForm';
 
-
 class App extends Component {
   state = {
     selected: {
@@ -27,44 +26,26 @@ class App extends Component {
   };
 
   updateFeature = (feature, newValue) => {
-
-
     const selected = Object.assign({}, this.state.selected);
-    
     selected[feature] = newValue;
-    
     this.setState({
       selected
     });
   };
 
   render() {
-    
-
-
     return (
       <div className="App">
         <header>
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          
-          
-
-          { /* Feature Form Component */ }
           <FeatureForm 
             features={this.props.features} 
             selected={this.state.selected} 
             updateFeature={this.updateFeature}
           />
-          { /* End of Feature Form Component */ }
-          
-
-          { /* Cart Component */ }
           <Cart selected={this.state.selected}/>
-          { /* End of Cart Component */ }          
-
-
         </main>
       </div>
     );

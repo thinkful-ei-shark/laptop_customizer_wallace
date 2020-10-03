@@ -26,5 +26,3 @@ class FeatureItemOption extends Component {
 }
 
 export default FeatureItemOption;
-
-

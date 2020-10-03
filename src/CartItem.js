@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-
 import USCurrencyFormat from './USCurrencyFormat';
-
 
 class CartItem extends Component {
 

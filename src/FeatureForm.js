@@ -4,12 +4,9 @@ import FeatureItem from './FeatureItem';
 class FeatureForm extends Component {
 
     getFeatureItemList = () => {
-//               ['Processor','Operating System','Video Card','Display']
         return Object.keys(this.props.features).map((feature, idx) => {
 
-            const featureHash = feature + '-' + idx;  // Processor-0, Operating System-1, ...
-            
-        // [ <FeatureItem />, <FeatureItem />, <FeatureItem />, <FeatureItem />]
+            const featureHash = feature + '-' + idx;
         
             return (
               <FeatureItem 

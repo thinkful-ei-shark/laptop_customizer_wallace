@@ -3,12 +3,9 @@ import CartTotal from './CartTotal';
 import CartItem from './CartItem';
 
 class Cart extends Component {
-
     generateCartItemList = () => {
         return Object.keys(this.props.selected).map((feature, idx) => {
-    
             const featureHash = feature + '-' + idx;
-        
             return (
               <CartItem 
                 key={featureHash}
@@ -20,11 +17,7 @@ class Cart extends Component {
         });        
     }
     render( ) {
-        const total = Object.keys(this.props.selected).reduce(
-            (acc, curr) => acc + this.props.selected[curr].cost,
-            0
-        );
-
+        const total = Object.keys(this.props.selected).reduce((acc, curr) => acc + this.props.selected[curr].cost, 0);
         return (
             <section className="main__summary">
                 <h2>Your cart</h2>
