@@ -1,7 +1,37 @@
+/**************Thomas Wallace************* Laptop Customizer Assignment ***********
+ * 
+ * 
+ * 
+ *     The App Component will consist of 2 sub-Components (MainForm and Cart)
+ * 
+ *      The MainForm Component will contain a MainItem component inside of a loop and called 
+ *        for however many items are in array.
+ *       
+ *        Those MainItem Components will contain a MainItemOption Components
+ * 
+ *        The Cart Component will contain a CartItem component listing all the items selected by user
+ *          as well as a CartTotal Component simply listing total price of all items selected.
+ *        
+ * 
+ *         Structure as follows
+ *                    <Header /> ???? I see no reason for it
+ *                    <App />
+ *                          <MainForm />
+ *                                <MainFormItem /> x4
+ * 
+ *                           <Cart />
+ *                                <CartItem />
+ *                                <CartTotal />
+ ******************************************************************************/
+
+
+
+
+
 import React, { Component } from 'react';
 import Cart from './Cart';
 import './App.css';
-import FeatureForm from './FeatureForm';
+import MainForm from './MainForm';
 
 class App extends Component {
   state = {
@@ -40,12 +70,12 @@ class App extends Component {
           <h1>ELF Computing | Laptops</h1>
         </header>
         <main>
-          <FeatureForm 
-            features={this.props.features} 
-            selected={this.state.selected} 
+          <MainForm
+            features={this.props.features}
+            selected={this.state.selected}
             updateFeature={this.updateFeature}
           />
-          <Cart selected={this.state.selected}/>
+          <Cart selected={this.state.selected} />
         </main>
       </div>
     );

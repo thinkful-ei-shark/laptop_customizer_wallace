@@ -2,11 +2,12 @@ import React, { Component } from 'react';
 import slugify from 'slugify';
 import USCurrencyFormat from './USCurrencyFormat';
 
-class FeatureItemOption extends Component {
+class MainItemOption extends Component {
 
-    render( ) {
+    render() {
+        // deconstructed to shorten code
         const { itemHash, item, feature } = this.props;
-        console.log(item,itemHash,feature)
+        console.log(item, itemHash, feature)
         return (
             <div key={itemHash} className="feature__item">
                 <input
@@ -25,4 +26,4 @@ class FeatureItemOption extends Component {
     }
 }
 
-export default FeatureItemOption;
+export default MainItemOption;

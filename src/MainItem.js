@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
+import React from 'react';
 import slugify from 'slugify';
-import FeatureItemOption from './FeatureItemOption';
+import MainItemOption from './MainItemOption';
 
 
-class FeatureItem extends Component {
+class MainItem extends React.Component {
 
     generateOptionList = () => {
         return this.props.options.map(item => {
             const itemHash = slugify(JSON.stringify(item));
             return (
-              <FeatureItemOption 
-                key={itemHash}
-                id={itemHash}
-                feature={this.props.name}
-                itemHash={itemHash}
-                item={item}
-                updateFeature={this.props.updateFeature}
-                selected={this.props.selected}
-              />
+                <MainItemOption
+                    key={itemHash}
+                    id={itemHash}
+                    feature={this.props.name}
+                    itemHash={itemHash}
+                    item={item}
+                    updateFeature={this.props.updateFeature}
+                    selected={this.props.selected}
+                />
             );
         });
     }
 
-    render( ) {
+    render() {
         const { name, featureHash } = this.props;
         return (
             <fieldset className="feature" key={featureHash}>
@@ -35,4 +35,4 @@ class FeatureItem extends Component {
     }
 }
 
-export default FeatureItem;
+export default MainItem;
